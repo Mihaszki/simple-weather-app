@@ -1,2 +1,49 @@
+# dependencies
 **/node_modules
+
+# private api key
 simple-weather-app-backend/weather_api_config.json
+
+# compiled output
+simple-weather-app-frontend/dist
+simple-weather-app-frontend/tmp
+simple-weather-app-frontend/out-tsc
+# Only exists if Bazel was run
+simple-weather-app-frontend/bazel-out
+
+# profiling files
+simple-weather-app-frontend/chrome-profiler-events*.json
+simple-weather-app-frontend/speed-measure-plugin*.json
+
+# IDEs and editors
+simple-weather-app-frontend/.idea
+simple-weather-app-frontend/.project
+simple-weather-app-frontend/.classpath
+simple-weather-app-frontend/.c9/
+simple-weather-app-frontend/*.launch
+simple-weather-app-frontend/.settings/
+simple-weather-app-frontend/*.sublime-workspace
+
+# IDE - VSCode
+simple-weather-app-frontend/.vscode/*
+simple-weather-app-frontend/!.vscode/settings.json
+simple-weather-app-frontend/!.vscode/tasks.json
+simple-weather-app-frontend/!.vscode/launch.json
+simple-weather-app-frontend/!.vscode/extensions.json
+simple-weather-app-frontend/.history/*
+
+# misc
+simple-weather-app-frontend/.sass-cache
+simple-weather-app-frontend/connect.lock
+simple-weather-app-frontend/coverage
+simple-weather-app-frontend/libpeerconnection.log
+simple-weather-app-frontend/npm-debug.log
+simple-weather-app-frontend/yarn-error.log
+simple-weather-app-frontend/testem.log
+simple-weather-app-frontend/typings
+
+# System Files
+simple-weather-app-frontend/.DS_Store
+simple-weather-app-frontend/Thumbs.db
+simple-weather-app-backend/.DS_Store
+simple-weather-app-backend/Thumbs.db
