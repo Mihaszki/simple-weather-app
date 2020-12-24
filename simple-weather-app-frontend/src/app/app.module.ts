@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { FormCityComponent } from './form-city/form-city.component';
+import { WeatherComponent } from './weather/weather.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
     HeaderComponent,
-    FormCityComponent
+    FormCityComponent,
+    WeatherComponent
   ],
   imports: [
     BrowserModule,
