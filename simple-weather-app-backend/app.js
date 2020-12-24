@@ -2,17 +2,21 @@ const express = require('express');
 const https = require('https');
 const app = express();
 const port = 3000;
+const cors = require('cors')
 // You can get api key from openweathermap.org
 const { api_key } = require('./weather_api_config.json');
+
+app.use(cors());
+app.use(express.json());
 
 app.get('/', (req, res) => {
     res.send('It works!');
 });
 
-app.get('/location/:location/', (req, res) => {
-    if (!req.params.location) {
+app.get('/location', (req, res) => {
+    if (!req.body.location) {
         res.status(500);
-        res.send({ 'Error': 'You haven\'t specified your location!' });
+        res.send({ 'cod': '404', 'message': 'You haven\'t specified your location!' });
         console.log('You haven\'t specified your location!');
     }
 
@@ -34,7 +38,7 @@ app.get('/location/:location/', (req, res) => {
     // An error has been received.
     }).on('error', (err) => {
         res.status(500);
-        res.send({ 'Error': err.message });
+        res.send({ 'cod': '404', 'message': 'An api-error has been received' });
         console.log('Error: ' + err.message);
     });
 });
