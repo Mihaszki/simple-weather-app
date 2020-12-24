@@ -1,4 +1,10 @@
+@import '../shared/variables';
+
 .error {
-    color: #ec1919;
+    color: $errorColor;
     padding: 5px;
+}
+
+.title {
+    text-align: center;
 }

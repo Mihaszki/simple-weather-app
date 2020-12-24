@@ -7,14 +7,13 @@ const cors = require('cors')
 const { api_key } = require('./weather_api_config.json');
 
 app.use(cors());
-app.use(express.json());
 
 app.get('/', (req, res) => {
     res.send('It works!');
 });
 
-app.get('/location', (req, res) => {
-    if (!req.body.location) {
+app.get('/location/:location', (req, res) => {
+    if (!req.params.location) {
         res.status(500);
         res.send({ 'cod': '404', 'message': 'You haven\'t specified your location!' });
         console.log('You haven\'t specified your location!');
