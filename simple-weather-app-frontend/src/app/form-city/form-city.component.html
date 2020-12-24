@@ -1,7 +1,9 @@
 <div class="form">
-    <form>
-        <input type="text" placeholder="Enter a city name">
-        <button type="submit">Check</button>
-        <div class="error" *ngIf="isError">There was an error!</div>
+    <form [formGroup]="cityForm" (ngSubmit)="onSubmit()">
+        <input type="text" formControlName="city" [class.isError]="(cityForm.invalid && isSubmitted) || (cityForm.controls.city.errors?.required && cityForm.controls.city.touched)" placeholder="Enter a city name">
+        <button>Check</button>
+        <div class="errorText">
+            <span class="isError" *ngIf="(cityForm.invalid && isSubmitted) || (cityForm.controls.city.errors?.required && cityForm.controls.city.touched)">City is required.</span>
+        </div>
     </form>
 </div>
