@@ -1,6 +1,14 @@
 @import '../shared/variables';
 
 .form {
+    div.errorText {
+        height: 20px;
+    }
+
+    span.isError {
+        color: $errorColor;
+    }
+
     padding: 10px;
     margin: 0 auto;
     margin-top: 25px;
@@ -8,11 +16,6 @@
     padding: 10px;
     text-align: center;
     font-size: 16px;
-
-    .error {
-        color: #ec1919;
-        padding: 5px;
-    }
 
     input[type="text"], button {
         padding: 10px 15px;
@@ -22,6 +25,10 @@
     input[type="text"] {
         border: 1px solid $buttonBg;
         &:hover {border: 1px solid $buttonBgHover;}
+
+        &.isError {
+            border: 1px solid $errorColor;
+        }
     }
 
     button {
