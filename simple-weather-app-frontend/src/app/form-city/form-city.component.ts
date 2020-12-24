@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router, ActivatedRoute } from '@angular/router'
 
 @Component({
   selector: 'app-form-city',
@@ -14,10 +15,13 @@ export class FormCityComponent implements OnInit {
 
   onSubmit() {
     this.isSubmitted = true;
-    if(!this.cityForm.invalid) console.log(this.cityForm.controls.city.value);
+    if(!this.cityForm.invalid) {
+      console.log(this.cityForm.controls.city.value);
+      this.router.navigate(['../weather', this.cityForm.controls.city.value], { relativeTo: this.activatedRoute });
+    }
   }
 
-  constructor() {
+  constructor(private router: Router, private activatedRoute: ActivatedRoute) {
   }
 
   ngOnInit(): void {

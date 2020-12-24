@@ -1,3 +1,6 @@
-<div class="error" *ngIf="isError">There was an error!</div>
-<p>weather works!</p>
-{{ location }}
+<div class="title">
+    <div class="error" *ngIf="isError"><h2>{{errorMsg | titlecase}}</h2></div>
+    <div *ngIf="isSuccess">
+        <h2>Weather For: {{city | titlecase}}</h2>
+    </div>
+</div>
