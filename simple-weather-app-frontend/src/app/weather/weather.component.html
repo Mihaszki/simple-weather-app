@@ -2,7 +2,7 @@
 
 <div class="weather-container" *ngIf="isSuccess">
     <div class="weather-box" *ngFor="let weather of weatherBoxes; index as i;" [class.show]="i == selectedBox" [class.hide]="i != selectedBox">
-        <div class="title">Weather For: {{city | titlecase}} | {{days[selectedBox]}}</div>
+        <div class="title">Weather For: {{city | titlecase}} | {{daysNames[selectedBox]}}</div>
         <div class="sub-title">
             <div class="icon"><img [alt]="weather[0].weather[0].main" src="http://openweathermap.org/img/wn/{{weather[0].weather[0].icon}}@2x.png"></div>
             <div class="description"><p><b>{{weather[0].weather[0].main | titlecase}}</b><br>{{weather[0].weather[0].description | titlecase}}</p></div>
