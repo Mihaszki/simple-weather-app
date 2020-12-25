@@ -1,6 +1,29 @@
-<div class="title">
-    <div class="error" *ngIf="isError"><h2>{{errorMsg | titlecase}}</h2></div>
-    <div *ngIf="isSuccess">
-        <h2>Weather For: {{city | titlecase}}</h2>
+<div class="error" *ngIf="isError"><h2>{{errorMsg | titlecase}}</h2></div>
+
+<div class="weather-container" *ngIf="isSuccess">
+    <div class="weather-box" *ngFor="let weather of weatherBoxes; index as i;" [class.show]="i == selectedBox" [class.hide]="i != selectedBox">
+        <div class="title">Weather For: {{city | titlecase}} | {{days[selectedBox]}}</div>
+        <div class="sub-title">
+            <div class="icon"><img [alt]="weather[0].weather[0].main" src="http://openweathermap.org/img/wn/{{weather[0].weather[0].icon}}@2x.png"></div>
+            <div class="description"><p><b>{{weather[0].weather[0].main | titlecase}}</b><br>{{weather[0].weather[0].description | titlecase}}</p></div>
+        </div>
+        <div class="temperature">Temperature: {{weather[0].main.temp | number:'1.0-0'}}&deg;C</div>
+        <div class="pressure">Pressure: {{weather[0].main.pressure}}hPa</div>
+        <div class="humidity">Humidity: {{weather[0].main.humidity}}%</div>
+    </div>    
+    
+    <div class="weather-chart"> 
+        <canvas baseChart
+        [datasets]="lineChartDataTemp"
+        [labels]="lineChartLabelsTemp"
+        [options]="lineChartOptions"
+        [chartType]="lineChartType"></canvas>
+    </div>
+
+    <div class="weather-buttons">
+        <button class="button" *ngFor="let day of daysNames; index as i" (click)="changeSelectedBox(i)" [class.active]="i == selectedBox">
+            <img [alt]="weatherBoxes[i][0].weather[0].main" src="http://openweathermap.org/img/wn/{{weatherBoxes[i][0].weather[0].icon}}@2x.png">
+            {{day}}
+        </button>
     </div>
 </div>

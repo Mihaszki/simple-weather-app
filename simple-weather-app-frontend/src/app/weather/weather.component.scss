@@ -3,8 +3,88 @@
 .error {
     color: $errorColor;
     padding: 5px;
+    text-align: center;
 }
 
-.title {
-    text-align: center;
+@import '../shared/variables';
+
+.weather-container {
+    box-shadow: 0 0 3px #000000;
+    width: 80%;
+    margin: 0 auto;
+    .weather-box {
+        background: #ffffff;
+        display: inline-block;
+        width: 100%;
+
+        &.hide {display: none;}
+        &.show {display: inline-block;}
+        .title {
+            text-align: center;
+            box-shadow: 0 1px 2px #000000;
+            padding: 10px;
+            color: $primaryColorLight;
+            background: $headerBgColor;
+            font-size: 20px;
+        }
+
+        .sub-title {
+            text-align: center;
+            background: #d4d4d4;
+
+            .icon, .description {
+                vertical-align: middle;
+                display: inline-block;
+            }
+
+            .description {
+                b {font-size: 25px;}
+            }
+        }
+
+        .temperature, .pressure, .humidity {
+            text-align: center;
+            padding: 20px;
+        }
+        .humidity {background: #f4f4ff;}
+        .pressure {background: #f0f0f7;}
+        .temperature {background: #e8e8f0;}
+
+    }
+
+    .weather-chart {
+        width: 100%;
+        height: 200px;
+    }
+
+    .weather-buttons {
+        display: flex;
+        text-align: center;
+        margin: 0 auto;
+        background: #d2d2d2;
+        .button {
+            text-align: center;
+            flex: 1;
+            padding: 20px 0;
+            border: 0;
+            background: #d2d2d2;
+            font-size: 22px;
+            &.active {
+                background: $headerBgColor;
+                color: $primaryColorLight;
+            }
+            &:hover {
+                background: $headerBgColor;
+                color: $primaryColorLight;
+                cursor: pointer;
+            }
+            &:focus {
+                outline: none;
+            }
+            img {
+                height: 50px;
+                vertical-align: middle;
+            }
+        }
+    }
 }
