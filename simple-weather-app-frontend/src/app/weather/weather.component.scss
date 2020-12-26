@@ -6,14 +6,12 @@
     text-align: center;
 }
 
-@import '../shared/variables';
-
 .weather-container {
-    box-shadow: 0 0 3px #000000;
+    box-shadow: 0 0 3px $boxShadowColor;
     width: 80%;
     margin: 0 auto;
     .weather-box {
-        background: #ffffff;
+        background: $weatherBoxBg;
         display: inline-block;
         width: 100%;
 
@@ -21,7 +19,7 @@
         &.show {display: inline-block;}
         .title {
             text-align: center;
-            box-shadow: 0 1px 2px #000000;
+            box-shadow: 0 1px 2px $boxShadowColor;
             padding: 10px;
             color: $primaryColorLight;
             background: $headerBgColor;
@@ -30,7 +28,7 @@
 
         .sub-title {
             text-align: center;
-            background: #d4d4d4;
+            background: $subTitleBg;
 
             .icon, .description {
                 vertical-align: middle;
@@ -46,9 +44,9 @@
             text-align: center;
             padding: 20px;
         }
-        .humidity {background: #f4f4ff;}
-        .pressure {background: #f0f0f7;}
-        .temperature {background: #e8e8f0;}
+        .humidity {background: $humidityBg;}
+        .pressure {background: $pressureBg;}
+        .temperature {background: $temperatureBg;}
 
     }
 
@@ -61,13 +59,13 @@
         display: flex;
         text-align: center;
         margin: 0 auto;
-        background: #d2d2d2;
+        background: $weatherBtnBg;
         .button {
             text-align: center;
             flex: 1;
             padding: 20px 0;
             border: 0;
-            background: #d2d2d2;
+            background: $weatherBtnBg;
             font-size: 22px;
             &.active {
                 background: $headerBgColor;
