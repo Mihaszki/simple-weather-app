@@ -68,6 +68,11 @@ export class WeatherComponent implements OnInit {
     .subscribe((data: any) => {
       this.jsonData = data;
       this.generatePage();
+    },
+    (error: any) => {
+      this.isError = true;
+      this.isSuccess = false;
+      this.errorMsg = error;
     });
   }
 
