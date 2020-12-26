@@ -8,8 +8,8 @@ import { Router, ActivatedRoute } from '@angular/router'
   styleUrls: ['./form-city.component.scss']
 })
 export class FormCityComponent implements OnInit {
-  public isSubmitted: boolean = false;
-  public cityForm = new FormGroup({
+  isSubmitted: boolean = false;
+  cityForm = new FormGroup({
     city: new FormControl('', [Validators.required]),
   });
 
