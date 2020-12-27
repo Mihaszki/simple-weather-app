@@ -5,7 +5,7 @@ A simple weather app made with Angular 11, Express.js and OpenWeatherMap API.
 
 ## Setup
 ### Runnig frontend
-* Install node packages `npm install`
+* Install node packages with `npm install`
 * Run in locally with `ng serve` or build it with `ng build`
 
 ### Runnig backend
